@@ -8,7 +8,7 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-    labels=[]
+    labels = []
 
     def is_recent(self):
         return self.published_date >= timezone.now() - datetime.timedelta(days=1)
